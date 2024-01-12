@@ -17,7 +17,6 @@ public class MyFirstWindowController : MonoBehaviour
 {
     // The UIDocument component of the window game object
     private UIDocument _window;
-    private int enableCount = 0; // this is a counter to track how many times the window has been enabled so it can be immediately closed at boot
 
     // The elements of the window that we need to access
     private VisualElement _rootElement;
@@ -77,7 +76,6 @@ public class MyFirstWindowController : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        enableCount++;
         Debug.Log("UI enabled");
         // Get the UIDocument component from the game object
         _window = GetComponent<UIDocument>();
@@ -114,7 +112,6 @@ public class MyFirstWindowController : MonoBehaviour
         var currentPitchSliderValue = _Pitch_Slider.value;
         var currentRollSliderValue = _Roll_Slider.value;
 
-        // Get the "Say hello!" button from the window
         _Yaw_Slider.RegisterValueChangedCallback(e => controlUpdate(e.newValue, "yawTrim", false));
         _Pitch_Slider.RegisterValueChangedCallback(e => controlUpdate(e.newValue, "pitchTrim", false));
         _Roll_Slider.RegisterValueChangedCallback(e => controlUpdate(e.newValue, "rollTrim", false));
@@ -173,10 +170,6 @@ public class MyFirstWindowController : MonoBehaviour
 
         if (GameManager.Instance?.Game?.ViewController?.GetActiveVehicle() != null)
         {
-            // Debug.Log("Active Vehicle is not null");
-            // Debug.Log(GameManager.Instance?.Game?.ViewController?.GetActiveVehicle()?.Guid);
-            // Debug.Log("controlUpdate called");
-            // Debug.Log(val);
             GameManager.Instance.Game.ViewController.TryGetActiveVehicle(out var vessel);
             if (vessel != null)
             {
@@ -194,11 +187,7 @@ public class MyFirstWindowController : MonoBehaviour
         if (!IsWindowOpen)
         {
             return;
-        } else if (enableCount < 2)
-        {
-            IsWindowOpen = false;
-            return;
-        }
+        } 
         // Update the sliders to reflect the current trim values
         if (GameManager.Instance?.Game?.ViewController?.GetActiveVehicle() != null)
         {

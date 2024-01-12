@@ -1,17 +1,46 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/MyFirstWindow/MyFirstWindow.uss?fileID=7433441132597879392&amp;guid=f49119c0dc6aec7469a0374f7f606ceb&amp;type=3#MyFirstWindow" />
-    <ui:VisualElement class="root">
-        <ui:VisualElement name="title-bar">
-            <ui:Label text="Trim Controller" />
-            <ui:Button text="×" name="close-button" />
+    <ui:VisualElement class="root" style="max-width: 300px;">
+        <ui:VisualElement name="title-bar" style="margin-bottom: 1px;">
+            <ui:Label text="Trim Controller" style="padding-top: 1px; padding-bottom: 1px; font-size: 20px;" />
+            <ui:Button text="×" name="close-button" style="padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px; width: 16px; height: 16px; font-size: 20px;" />
         </ui:VisualElement>
         <ui:VisualElement name="content">
-            <ui:VisualElement name="icon" />
-            <ui:TextField picking-mode="Ignore" label="Player name:" name="name-textfield" />
-            <ui:Toggle label="Is it afternoon?" name="noon-toggle" class="toggle" />
-            <ui:Button text="Say hello!" name="say-hello-button" />
+            <ui:VisualElement focusable="false" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column;">
+                <ui:Label tabindex="-1" text="Yaw-" display-tooltip-when-elided="true" style="font-size: 10px;" />
+                <ui:Slider high-value="1" name="Yaw-Slider" low-value="-1" show-input-field="true" inverted="false" style="flex-direction: row; align-items: center; justify-content: flex-start; align-self: stretch; font-size: 10px; padding-top: 1px; padding-bottom: 1px;">
+                    <ui:VisualElement>
+                        <ui:VisualElement style="flex-direction: row-reverse; height: 30px; width: 109px; align-items: flex-start; justify-content: space-between; align-self: flex-start;">
+                            <ui:Button text="X" display-tooltip-when-elided="true" name="yawReset" style="align-self: flex-end;" />
+                            <ui:Button text="+" display-tooltip-when-elided="true" name="yawPlus" style="align-self: flex-end; justify-content: flex-end; align-items: center;" />
+                            <ui:Button text="-" display-tooltip-when-elided="true" name="yawMinus" style="align-self: flex-end; font-size: 20px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:Slider>
+            </ui:VisualElement>
+            <ui:VisualElement focusable="false" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column;">
+                <ui:Label tabindex="-1" text="Pitch" display-tooltip-when-elided="true" style="font-size: 10px; padding-top: 1px; padding-bottom: 1px;" />
+                <ui:Slider high-value="1" name="Pitch-Slider" low-value="-1" show-input-field="true" inverted="false" style="flex-direction: row; align-items: flex-start; justify-content: space-around; align-self: stretch; font-size: 10px; padding-top: 1px; padding-bottom: 1px;">
+                    <ui:VisualElement style="flex-direction: row-reverse; height: 30px; width: 109px; align-items: flex-end; justify-content: space-around; align-self: center;">
+                        <ui:Button text="X" display-tooltip-when-elided="true" name="pitchReset" style="align-self: flex-end;" />
+                        <ui:Button text="+" display-tooltip-when-elided="true" name="pitchPlus" style="align-self: flex-end; justify-content: flex-end; align-items: center;" />
+                        <ui:Button text="-" display-tooltip-when-elided="true" name="pitchMinus" style="align-self: flex-end; font-size: 20px;" />
+                    </ui:VisualElement>
+                </ui:Slider>
+                <ui:VisualElement />
+            </ui:VisualElement>
+            <ui:VisualElement focusable="false" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column;">
+                <ui:Label tabindex="-1" text="Roll" display-tooltip-when-elided="true" style="font-size: 10px; padding-top: 1px; padding-bottom: 1px;" />
+                <ui:Slider high-value="1" name="Roll-Slider" low-value="-1" show-input-field="true" inverted="false" style="flex-direction: row; align-items: flex-start; justify-content: space-around; align-self: stretch; font-size: 10px; padding-top: 1px; padding-bottom: 1px;">
+                    <ui:VisualElement style="flex-direction: row-reverse; height: 30px; width: 109px; align-items: flex-end; justify-content: space-around; align-self: center;">
+                        <ui:Button text="X" display-tooltip-when-elided="true" name="rollReset" style="align-self: flex-end;" />
+                        <ui:Button text="+" display-tooltip-when-elided="true" name="rollPlus" style="align-self: flex-end; justify-content: flex-end; align-items: center;" />
+                        <ui:Button text="-" display-tooltip-when-elided="true" name="rollMinus" style="align-self: flex-end; font-size: 20px;" />
+                    </ui:VisualElement>
+                </ui:Slider>
+                <ui:VisualElement />
+            </ui:VisualElement>
             <ui:Label name="greeting-label" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
-

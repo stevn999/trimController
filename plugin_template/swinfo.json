@@ -6,7 +6,7 @@
   "description": "A window to control your trim",
   "source": "",
   "version": "1.0.0",
-  "version_check": "",
+  "version_check": "https://raw.githubusercontent.com/stevn999/trimController/main/plugin_template/swinfo.json",
   "ksp2_version": {
     "min": "0.2.0",
     "max": "*"

@@ -1,0 +1,23 @@
+{
+  "spec": "2.0",
+  "mod_id": "trimController",
+  "author": "VaanUltra",
+  "name": "Trim Controller",
+  "description": "A window to control your trim",
+  "source": "",
+  "version": "1.0.0",
+  "version_check": "",
+  "ksp2_version": {
+    "min": "0.2.0",
+    "max": "*"
+  },
+  "dependencies": [
+    {
+      "id": "com.github.x606.spacewarp",
+      "version": {
+        "min": "1.7.0",
+        "max": "*"
+      }
+    }
+  ]
+}
